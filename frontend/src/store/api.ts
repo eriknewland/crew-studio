@@ -7,7 +7,8 @@ import type {
   UpdateProductInput,
 } from '@/types/product';
 
-const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+console.log('API URL:', baseUrl);
 
 export const productApi = createApi({
   reducerPath: 'productApi',
