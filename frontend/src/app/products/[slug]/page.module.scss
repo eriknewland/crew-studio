@@ -1,0 +1,232 @@
+@use '../../../styles/variables' as *;
+
+.main {
+  min-height: 100vh;
+  padding: $spacing-xl 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xl;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+
+  a {
+    color: $text-secondary;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  padding: $spacing-xl;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  background-color: $surface-color;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-lg;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.price {
+  font-size: $font-size-2xl;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.description {
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    font-size: $font-size-base;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: auto;
+}
+
+.related {
+  margin-top: $spacing-2xl;
+}
+
+.relatedTitle {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-2xl;
+  padding: $spacing-xl;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skeletonImage {
+  width: 100%;
+  padding-top: 100%;
+  background: linear-gradient(90deg, $surface-color 25%, darken($surface-color, 5%) 50%, $surface-color 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $border-radius-md;
+}
+
+.skeletonContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.skeletonTitle {
+  height: 40px;
+  width: 80%;
+  background: linear-gradient(90deg, $surface-color 25%, darken($surface-color, 5%) 50%, $surface-color 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $border-radius-sm;
+}
+
+.skeletonPrice {
+  height: 30px;
+  width: 40%;
+  background: linear-gradient(90deg, $surface-color 25%, darken($surface-color, 5%) 50%, $surface-color 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $border-radius-sm;
+}
+
+.skeletonDescription {
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(90deg, $surface-color 25%, darken($surface-color, 5%) 50%, $surface-color 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $border-radius-sm;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  text-align: center;
+
+  h1 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.deleteConfirm {
+  text-align: center;
+
+  p {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.deleteWarning {
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+.deleteActions {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+}

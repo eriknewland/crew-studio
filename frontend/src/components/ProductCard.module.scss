@@ -1,0 +1,49 @@
+@use '../styles/variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: $background-color;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  background-color: $surface-color;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform $transition-slow;
+
+  .card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.content {
+  padding: $spacing-md $spacing-sm;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.price {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}

@@ -1,0 +1,39 @@
+@use '../styles/variables' as *;
+
+.main {
+  min-height: 100vh;
+  padding: $spacing-xl 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.layout {
+  display: flex;
+  gap: $spacing-xl;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $spacing-lg;
+}
+
+.addButton {
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
